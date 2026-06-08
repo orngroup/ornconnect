@@ -4,615 +4,445 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ORN Holidays — UK & European DMC Business Model</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #000000;
+  --black: #000000;
+  --white: #ffffff;
   --gold: #d4a843;
-  --gold-light: #e8c87a;
-  --gold-dim: rgba(212,168,67,0.15);
+  --gold-bg: rgba(212,168,67,0.12);
+  --gold-border: rgba(212,168,67,0.35);
   --surface: #111111;
   --surface-2: #181818;
-  --surface-3: #222222;
   --border: rgba(255,255,255,0.08);
-  --border-gold: rgba(212,168,67,0.3);
-  --navy: #1a2e4a;
-  --steel: #2d6a9f;
-  --sky: #4fb3d4;
-  --green: #3a9a6e;
-  --yellow: #e8c53a;
-  --red: #d44c30;
-  --white: #ffffff;
-  --white-80: rgba(255,255,255,0.8);
-  --white-50: rgba(255,255,255,0.5);
-  --white-30: rgba(255,255,255,0.3);
-  --white-12: rgba(255,255,255,0.12);
+  --border-strong: rgba(255,255,255,0.18);
+  --sidebar-w: 240px;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 15px;
-  line-height: 1.65;
-}
-/* NAV */
-.nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(0,0,0,0.95);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center;
-  padding: 0 2rem; height: 58px;
-  overflow-x: auto; gap: 0;
-}
-.nav-logo img {
-  height: 32px; width: auto;
-  margin-right: 2.5rem;
-  flex-shrink: 0;
-}
-.nav a {
-  color: var(--white-50);
-  text-decoration: none;
-  font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.07em; text-transform: uppercase;
-  padding: 0 1rem; height: 58px;
-  display: flex; align-items: center;
-  border-bottom: 2px solid transparent;
-  white-space: nowrap;
-  transition: color 0.2s, border-color 0.2s;
-}
-.nav a:hover, .nav a.active { color: var(--white); border-bottom-color: var(--gold); }
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;overflow:hidden;}
+body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.65;display:flex;flex-direction:column;}
 
-/* COLOUR BAR */
-.colour-bar {
-  height: 4px;
-  background: linear-gradient(90deg,
-    #1a2e4a 16.6%, #2d6a9f 16.6% 33.3%,
-    #4fb3d4 33.3% 50%, #3a9a6e 50% 66.6%,
-    #e8c53a 66.6% 83.3%, #d44c30 83.3%);
+/* TOP BAR */
+.topbar{
+  height:52px;flex-shrink:0;
+  background:#000;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:0;
+  z-index:200;
 }
+.topbar-logo{
+  width:var(--sidebar-w);flex-shrink:0;
+  display:flex;align-items:center;padding:0 1.5rem;
+  border-right:1px solid var(--border);height:100%;
+}
+.topbar-logo img{height:26px;width:auto;}
+.topbar-title{
+  padding:0 1.5rem;font-size:0.72rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:rgba(255,255,255,0.3);
+}
+.colour-strip{
+  margin-left:auto;height:100%;
+  display:flex;
+}
+.colour-strip span{display:block;width:8px;height:100%;}
 
-/* HERO */
-.hero {
-  padding: 5rem 2rem 4rem;
-  max-width: 1000px; margin: 0 auto;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--gold-dim);
-  border: 1px solid var(--border-gold);
-  border-radius: 100px; padding: 5px 14px;
-  font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 1.75rem;
-}
-.hero-badge .dot {
-  width: 6px; height: 6px;
-  background: var(--gold); border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+/* BODY LAYOUT */
+.app{display:flex;flex:1;overflow:hidden;}
 
-h1 {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 800; line-height: 1.15;
-  color: var(--white); margin-bottom: 1.25rem;
-  letter-spacing: -0.02em;
+/* SIDEBAR */
+.sidebar{
+  width:var(--sidebar-w);flex-shrink:0;
+  background:#0a0a0a;border-right:1px solid var(--border);
+  display:flex;flex-direction:column;
+  overflow-y:auto;
 }
-h1 em { color: var(--gold); font-style: normal; }
+.sidebar-section-label{
+  font-size:0.6rem;font-weight:700;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.2);
+  padding:1.25rem 1.5rem 0.5rem;
+}
+.nav-item{
+  display:flex;align-items:center;gap:10px;
+  padding:0.6rem 1.5rem;cursor:pointer;
+  border-left:2px solid transparent;
+  transition:background 0.15s,border-color 0.15s;
+  text-decoration:none;
+  position:relative;
+}
+.nav-item:hover{background:rgba(255,255,255,0.04);}
+.nav-item.active{
+  background:rgba(212,168,67,0.08);
+  border-left-color:var(--gold);
+}
+.nav-num{
+  font-size:0.62rem;font-weight:700;
+  color:rgba(255,255,255,0.2);
+  min-width:20px;text-align:center;
+  transition:color 0.15s;
+}
+.nav-item.active .nav-num{color:var(--gold);}
+.nav-label{
+  font-size:0.8rem;font-weight:500;
+  color:rgba(255,255,255,0.5);
+  transition:color 0.15s;
+}
+.nav-item.active .nav-label{color:var(--white);font-weight:600;}
+.nav-item:hover .nav-label{color:rgba(255,255,255,0.85);}
 
-.hero-sub {
-  font-size: 1rem; color: var(--white-80);
-  max-width: 660px; line-height: 1.8;
-  margin-bottom: 2.5rem; font-weight: 300;
-}
-.hero-meta {
-  display: flex; gap: 2.5rem; flex-wrap: wrap;
-  border-top: 1px solid var(--border);
-  padding-top: 1.75rem;
-}
-.meta-item { font-size: 0.78rem; }
-.meta-item strong {
-  display: block; color: var(--gold);
-  font-size: 0.68rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: 3px;
-}
-.meta-item span { color: var(--white-80); font-weight: 400; }
-
-/* SECTIONS */
-section { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
-section + section { border-top: 1px solid var(--border); }
-
-.section-label {
-  font-size: 0.68rem; font-weight: 700;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 0.5rem;
-}
-h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 800; color: var(--white);
-  margin-bottom: 1rem; line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-h2 em { color: var(--gold); font-style: normal; }
-h3 { font-size: 0.88rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
-p { color: var(--white-80); margin-bottom: 0.9rem; font-weight: 300; }
-p:last-child { margin-bottom: 0; }
-
-/* PILLARS */
-.pillars {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 12px; overflow: hidden;
-  margin-top: 2rem;
-}
-.pillar {
-  background: var(--surface);
-  padding: 1.5rem 1.25rem;
-}
-.pillar-num {
-  font-size: 1.8rem; font-weight: 800;
-  color: var(--gold); line-height: 1;
-  margin-bottom: 0.6rem;
-}
-.pillar h3 { font-size: 0.82rem; margin-bottom: 0.35rem; color: var(--white); }
-.pillar p { font-size: 0.76rem; color: var(--white-50); margin: 0; }
-
-/* INFOBOX */
-.infobox {
-  background: rgba(212,168,67,0.07);
-  border: 1px solid var(--border-gold);
-  border-radius: 8px; padding: 1.1rem 1.25rem;
-  margin-top: 1.5rem; font-size: 0.82rem;
-  color: var(--white-80); line-height: 1.65;
-}
-.infobox strong { color: var(--gold); font-weight: 700; }
-
-/* SERVICES */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 12px; overflow: hidden;
-  margin-top: 2rem;
-}
-.service {
-  background: var(--surface);
-  padding: 1.6rem 1.4rem;
-  transition: background 0.2s;
-}
-.service:hover { background: var(--surface-2); }
-.service-accent {
-  width: 28px; height: 3px;
-  border-radius: 2px; margin-bottom: 1rem;
-}
-.service h3 { font-size: 0.88rem; color: var(--white); margin-bottom: 0.5rem; }
-.service p { font-size: 0.78rem; color: var(--white-50); margin: 0; line-height: 1.6; }
-.service-tag {
-  display: inline-block; font-size: 0.62rem;
-  font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 3px 8px; border-radius: 4px;
-  margin-top: 1rem;
-  background: var(--gold-dim); color: var(--gold);
+.sidebar-footer{
+  margin-top:auto;padding:1.25rem 1.5rem;
+  border-top:1px solid var(--border);
+  font-size:0.65rem;color:rgba(255,255,255,0.2);
+  line-height:1.6;
 }
 
-/* REVENUE */
-.revenue-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 12px; overflow: hidden;
-  margin-top: 2rem;
+/* MAIN CONTENT */
+.main{
+  flex:1;overflow-y:auto;
+  background:var(--black);
 }
-.rev-card { background: var(--surface); padding: 1.5rem; }
-.rev-card.primary { background: rgba(212,168,67,0.07); }
-.rev-tag {
-  display: inline-block; font-size: 0.62rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;
+.panel{
+  display:none;
+  min-height:100%;
+  animation:fadein 0.25s ease;
 }
-.rev-tag.trx { background: var(--gold-dim); color: var(--gold); }
-.rev-tag.pct { background: rgba(58,154,110,0.15); color: #5cc494; }
-.rev-tag.mgmt { background: rgba(79,179,212,0.12); color: var(--sky); }
-.rev-tag.cst { background: rgba(45,106,159,0.18); color: #7ab8df; }
-.rev-rate {
-  font-size: 1.6rem; font-weight: 800;
-  color: var(--white); line-height: 1;
-  margin-bottom: 0.4rem; letter-spacing: -0.02em;
-}
-.rev-card h3 { font-size: 0.84rem; color: var(--white); margin-bottom: 0.4rem; }
-.rev-card p { font-size: 0.76rem; color: var(--white-50); margin: 0; }
+.panel.active{display:block;}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-/* STATS */
-.stat-row {
-  display: flex; gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 12px; overflow: hidden;
-  margin-top: 2rem; flex-wrap: wrap;
-}
-.stat {
-  flex: 1; min-width: 130px;
-  background: var(--surface); padding: 1.25rem 1.4rem;
-}
-.stat-value {
-  font-size: 2rem; font-weight: 800;
-  color: var(--gold); line-height: 1;
-  margin-bottom: 0.3rem; letter-spacing: -0.03em;
-}
-.stat-label { font-size: 0.72rem; color: var(--white-50); font-weight: 500; line-height: 1.4; }
+/* ── CONTENT STYLES ── */
+.hero{max-width:900px;margin:0 auto;padding:4rem 3rem;}
+section{max-width:900px;margin:0 auto;padding:3.5rem 3rem;}
+section+section{border-top:1px solid var(--border);}
 
-/* ORG */
-.org-tier-label {
-  font-size: 0.67rem; font-weight: 700;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--white-30); margin: 1.75rem 0 0.75rem;
-  display: flex; align-items: center; gap: 10px;
-}
-.org-tier-label::after { content:''; flex:1; height:1px; background: var(--border); }
-.org-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
-.org-box {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px; padding: 0.8rem 1rem;
-  flex: 1; min-width: 160px;
-  transition: border-color 0.2s;
-}
-.org-box:hover { border-color: var(--border-gold); }
-.org-box.highlight { border-color: rgba(212,168,67,0.45); background: rgba(212,168,67,0.06); }
-.org-box.central { border-color: rgba(79,179,212,0.35); background: rgba(79,179,212,0.06); }
-.org-box.fulfilment { border-color: rgba(212,76,48,0.25); background: rgba(212,76,48,0.05); }
-.org-role { font-size: 0.68rem; color: var(--white-30); margin-bottom: 2px; font-weight: 500; }
-.org-name { font-size: 0.82rem; font-weight: 700; color: var(--white); }
-.org-div { font-size: 0.68rem; color: var(--gold); margin-top: 3px; font-weight: 600; }
-.org-arrow { text-align: center; color: var(--white-30); font-size: 1rem; margin: 0.15rem 0; }
+.label{font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:var(--white);margin-bottom:1rem;line-height:1.15;letter-spacing:-0.02em;}
+h2 em{color:var(--gold);font-style:normal;}
+h3{font-size:0.88rem;font-weight:700;color:var(--white);margin-bottom:0.45rem;}
+p{color:rgba(255,255,255,0.7);margin-bottom:0.85rem;font-weight:300;}
+p:last-child{margin-bottom:0;}
 
-/* COST TABLE */
-.cost-table { width: 100%; border-collapse: collapse; margin-top: 1.75rem; font-size: 0.82rem; }
-.cost-table th {
-  text-align: left; padding: 0.75rem 1rem;
-  font-size: 0.67rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--white-30); border-bottom: 1px solid var(--border);
-}
-.cost-table td {
-  padding: 0.9rem 1rem;
-  border-bottom: 1px solid var(--border);
-  color: var(--white-80); vertical-align: top; font-weight: 300;
-}
-.cost-table tr:last-child td { border-bottom: none; }
-.cost-table td:first-child { color: var(--white); font-weight: 600; }
-.badge {
-  display: inline-block; font-size: 0.63rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 2px 8px; border-radius: 4px;
-}
-.badge.save { background: rgba(58,154,110,0.15); color: #5cc494; }
-.badge.move { background: rgba(79,179,212,0.12); color: var(--sky); }
-.badge.pool { background: var(--gold-dim); color: var(--gold); }
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-bg);border:1px solid var(--gold-border);border-radius:100px;padding:5px 14px;font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.75rem;}
+.hero-badge .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.35;transform:scale(0.7)}}
+h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:var(--white);line-height:1.12;margin-bottom:1.25rem;letter-spacing:-0.03em;}
+h1 em{color:var(--gold);font-style:normal;}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.7);max-width:640px;line-height:1.8;margin-bottom:2.5rem;font-weight:300;}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:1.75rem;}
+.meta-item strong{display:block;color:var(--gold);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px;}
+.meta-item span{color:var(--white);font-size:0.82rem;font-weight:400;}
 
-/* FLOW */
-.flow { display: flex; align-items: stretch; margin-top: 2rem; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-.flow-step {
-  flex: 1; background: var(--surface);
-  padding: 1.4rem 1rem; position: relative;
-  border-right: 1px solid var(--border);
-}
-.flow-step:last-child { border-right: none; }
-.flow-step::after {
-  content: '›'; position: absolute;
-  right: -10px; top: 50%; transform: translateY(-50%);
-  color: var(--gold); font-size: 1.2rem; z-index: 2;
-  font-weight: 700;
-}
-.flow-step:last-child::after { display: none; }
-.flow-num { font-size: 0.62rem; color: var(--gold); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem; }
-.flow-step h3 { font-size: 0.78rem; color: var(--white); margin-bottom: 0.3rem; }
-.flow-step p { font-size: 0.72rem; color: var(--white-50); margin: 0; line-height: 1.5; }
-@media(max-width:680px) {
-  .flow { flex-direction: column; }
-  .flow-step { border-right: none; border-bottom: 1px solid var(--border); }
-  .flow-step::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -12px; transform: translateX(-50%); }
-  .flow-step:last-child { border-bottom: none; }
-}
+.infobox{background:var(--gold-bg);border:1px solid var(--gold-border);border-radius:8px;padding:1.1rem 1.4rem;margin-top:1.5rem;font-size:0.82rem;color:var(--white);line-height:1.65;font-weight:300;}
+.infobox strong{color:var(--gold);font-weight:700;}
 
-/* PHASES */
-.phases {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 12px; overflow: hidden;
-  margin-top: 2rem;
-}
-.phase { background: var(--surface); padding: 1.5rem; position: relative; padding-top: 1.75rem; }
-.phase::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
-.phase.ph1::before { background: var(--navy); }
-.phase.ph2::before { background: var(--steel); }
-.phase.ph3::before { background: var(--green); }
-.phase.ph4::before { background: var(--gold); }
-.phase-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; margin-bottom: 0.5rem; }
-.ph1 .phase-label { color: var(--sky); }
-.ph2 .phase-label { color: #7ab8df; }
-.ph3 .phase-label { color: #5cc494; }
-.ph4 .phase-label { color: var(--gold); }
-.phase h3 { font-size: 0.86rem; color: var(--white); margin-bottom: 0.85rem; }
-.phase ul { list-style: none; padding: 0; }
-.phase ul li {
-  font-size: 0.76rem; color: var(--white-50);
-  padding: 0.28rem 0 0.28rem 1rem; position: relative;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  font-weight: 300;
-}
-.phase ul li:last-child { border-bottom: none; }
-.phase ul li::before { content:'·'; position:absolute; left:0; color: var(--gold); font-size: 1rem; line-height: 1.4; }
+.block-grid{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem;}
+.block{background:var(--surface);padding:1.5rem;transition:background 0.15s;}
+.block:hover{background:var(--surface-2);}
+.block-accent{width:24px;height:3px;border-radius:2px;margin-bottom:1rem;}
+.block h3{font-size:0.86rem;color:var(--white);margin-bottom:0.4rem;}
+.block p{font-size:0.76rem;color:rgba(255,255,255,0.55);margin:0;line-height:1.6;font-weight:300;}
+.block-tag{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-top:0.9rem;background:var(--gold-bg);color:var(--gold);}
+.cols-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.cols-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+.cols-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
 
-/* PARTNERSHIPS */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 12px; overflow: hidden;
-  margin-top: 2rem;
-}
-.card { background: var(--surface); padding: 1.5rem; transition: background 0.2s; }
-.card:hover { background: var(--surface-2); }
-.card-icon {
-  width: 36px; height: 36px; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; margin-bottom: 0.9rem;
-  background: var(--white-12);
-}
-.card h3 { font-size: 0.86rem; color: var(--white); margin-bottom: 0.4rem; }
-.card p { font-size: 0.76rem; color: var(--white-50); margin: 0; line-height: 1.6; font-weight: 300; }
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem;}
+.pillar{background:var(--surface);padding:1.4rem 1.2rem;}
+.pillar-num{font-size:1.8rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:0.5rem;}
+.pillar h3{font-size:0.79rem;margin-bottom:0.3rem;}
+.pillar p{font-size:0.73rem;color:rgba(255,255,255,0.4);margin:0;}
 
-/* PRINCIPLES */
-.principles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 12px; overflow: hidden;
-  margin-top: 2rem;
-}
-.principle { background: var(--surface); padding: 1.5rem; }
-.principle .num {
-  font-size: 1.4rem; font-weight: 800;
-  color: rgba(212,168,67,0.25); margin-bottom: 0.4rem;
-}
-.principle h3 { font-size: 0.82rem; color: var(--white); margin-bottom: 0.4rem; }
-.principle p { font-size: 0.74rem; color: var(--white-50); margin: 0; font-weight: 300; }
+.rev-tag{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-bottom:0.7rem;}
+.rev-tag.trx{background:var(--gold-bg);color:var(--gold);}
+.rev-tag.pct{background:rgba(58,154,110,0.15);color:#5cc494;}
+.rev-tag.mgmt{background:rgba(79,179,212,0.12);color:#4fb3d4;}
+.rev-tag.cst{background:rgba(45,106,159,0.18);color:#7ab8df;}
+.rev-block{background:var(--surface);padding:1.5rem;}
+.rev-block.primary{background:rgba(212,168,67,0.06);}
+.rev-value{font-size:1.4rem;font-weight:800;color:var(--white);line-height:1;margin-bottom:0.35rem;letter-spacing:-0.02em;}
+.rev-block h3{font-size:0.83rem;color:var(--white);margin-bottom:0.35rem;}
+.rev-block p{font-size:0.74rem;color:rgba(255,255,255,0.5);margin:0;font-weight:300;}
 
-/* FOOTER */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 2rem;
-  max-width: 1000px; margin: 0 auto;
-  display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 1rem;
-}
-footer img { height: 28px; width: auto; }
-.footer-meta { font-size: 0.72rem; color: var(--white-30); text-align: right; line-height: 1.6; }
+.stats{display:flex;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem;flex-wrap:wrap;}
+.stat{flex:1;min-width:130px;background:var(--surface);padding:1.25rem 1.4rem;}
+.stat-value{font-size:2rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:0.25rem;}
+.stat-label{font-size:0.7rem;color:rgba(255,255,255,0.45);font-weight:500;line-height:1.4;}
+
+.cost-table{width:100%;border-collapse:collapse;margin-top:1.75rem;font-size:0.81rem;}
+.cost-table th{text-align:left;padding:0.7rem 1rem;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);border-bottom:1px solid var(--border);}
+.cost-table td{padding:0.85rem 1rem;border-bottom:1px solid var(--border);color:rgba(255,255,255,0.7);vertical-align:top;font-weight:300;}
+.cost-table tr:last-child td{border-bottom:none;}
+.cost-table tr:hover td{background:rgba(255,255,255,0.02);}
+.cost-table td:first-child{color:var(--white);font-weight:600;}
+.badge{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:4px;}
+.badge.save{background:rgba(58,154,110,0.15);color:#5cc494;}
+.badge.move{background:rgba(79,179,212,0.12);color:#4fb3d4;}
+.badge.pool{background:var(--gold-bg);color:var(--gold);}
+
+.flow{display:flex;align-items:stretch;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem;}
+.flow-step{flex:1;background:var(--surface);padding:1.4rem 1rem;position:relative;border-right:1px solid var(--border);}
+.flow-step:last-child{border-right:none;}
+.flow-step::after{content:'›';position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.1rem;font-weight:700;z-index:2;}
+.flow-step:last-child::after{display:none;}
+.flow-num{font-size:0.6rem;color:var(--gold);font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.4rem;}
+.flow-step h3{font-size:0.76rem;color:var(--white);margin-bottom:0.25rem;}
+.flow-step p{font-size:0.7rem;color:rgba(255,255,255,0.45);margin:0;line-height:1.5;font-weight:300;}
+
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem;}
+.phase{background:var(--surface);padding:1.5rem;position:relative;padding-top:1.7rem;}
+.phase::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.phase.ph1::before{background:#1a2e4a;}
+.phase.ph2::before{background:#2d6a9f;}
+.phase.ph3::before{background:#3a9a6e;}
+.phase.ph4::before{background:var(--gold);}
+.phase-lbl{font-size:0.6rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;margin-bottom:0.45rem;}
+.ph1 .phase-lbl{color:#4fb3d4;}
+.ph2 .phase-lbl{color:#7ab8df;}
+.ph3 .phase-lbl{color:#5cc494;}
+.ph4 .phase-lbl{color:var(--gold);}
+.phase h3{font-size:0.84rem;color:var(--white);margin-bottom:0.75rem;}
+.phase ul{list-style:none;padding:0;}
+.phase ul li{font-size:0.74rem;color:rgba(255,255,255,0.5);padding:0.25rem 0 0.25rem 0.9rem;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);font-weight:300;}
+.phase ul li:last-child{border-bottom:none;}
+.phase ul li::before{content:'·';position:absolute;left:0;color:var(--gold);font-size:1rem;line-height:1.35;}
+
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:2px;}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.2);}
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-logo">
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-logo">
     <img src="data:image/png;base64,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" alt="ORN">
   </div>
-  <a href="#proposition" class="active">Proposition</a>
-  <a href="#services">Services</a>
-  <a href="#revenue">Revenue</a>
-  <a href="#structure">Structure</a>
-  <a href="#costs">Cost Model</a>
-  <a href="#roadmap">Roadmap</a>
-  <a href="#principles">Principles</a>
-</nav>
+  <span class="topbar-title">UK & European DMC — Business Model</span>
+  <div class="colour-strip">
+    <span style="background:#1a2e4a;"></span>
+    <span style="background:#2d6a9f;"></span>
+    <span style="background:#4fb3d4;"></span>
+    <span style="background:#3a9a6e;"></span>
+    <span style="background:#d4a843;"></span>
+    <span style="background:#d44c30;"></span>
+  </div>
+</div>
 
-<div class="colour-bar"></div>
+<!-- APP -->
+<div class="app">
 
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="sidebar-section-label">Business Model</div>
+    <div class="nav-item active" data-panel="hero" onclick="showPanel('hero', this)">
+      <span class="nav-num">◆</span>
+      <span class="nav-label">Proposition</span>
+    </div>
+    <div class="nav-item" data-panel="rationale" onclick="showPanel('rationale', this)">
+      <span class="nav-num">01</span>
+      <span class="nav-label">Rationale</span>
+    </div>
+    <div class="nav-item" data-panel="services" onclick="showPanel('services', this)">
+      <span class="nav-num">02</span>
+      <span class="nav-label">Services</span>
+    </div>
+    <div class="nav-item" data-panel="revenue" onclick="showPanel('revenue', this)">
+      <span class="nav-num">03</span>
+      <span class="nav-label">Revenue Model</span>
+    </div>
+    <div class="nav-item" data-panel="cost-model" onclick="showPanel('cost-model', this)">
+      <span class="nav-num">04</span>
+      <span class="nav-label">Cost Model</span>
+    </div>
+    <div class="nav-item" data-panel="transaction-flow" onclick="showPanel('transaction-flow', this)">
+      <span class="nav-num">05</span>
+      <span class="nav-label">Transaction Flow</span>
+    </div>
+    <div class="nav-item" data-panel="roadmap" onclick="showPanel('roadmap', this)">
+      <span class="nav-num">06</span>
+      <span class="nav-label">Roadmap</span>
+    </div>
+    <div class="nav-item" data-panel="partnerships" onclick="showPanel('partnerships', this)">
+      <span class="nav-num">07</span>
+      <span class="nav-label">Partnerships</span>
+    </div>
+    <div class="nav-item" data-panel="principles" onclick="showPanel('principles', this)">
+      <span class="nav-num">08</span>
+      <span class="nav-label">Principles</span>
+    </div>
+    <div class="sidebar-footer">
+      ORN Holidays UK &amp; Europe<br>
+      17 Hanover Square<br>
+      London W1S 1BN<br><br>
+      Confidential · 2026
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main" id="main">
+    <div class="panel active" id="panel-hero">
 <header class="hero" id="proposition">
-  <div class="hero-badge"><span class="dot"></span> Strategic Proposal — UK & Europe</div>
+  <div class="hero-badge"><span class="dot"></span>Strategic Proposal — UK & Europe</div>
   <h1>ORN Holidays as the <em>UK & European DMC</em><br>for the ORN Global Group</h1>
   <p class="hero-sub">Repositioning ORN Holidays as the group's central commercial contracting, cruise, transport, and coach tour division — serving all global offices inbound, generating group income through transaction fees and revenue participation, and consolidating European spend into a single high-performance hub.</p>
   <div class="hero-meta">
     <div class="meta-item"><strong>Primary Customer</strong><span>ORN Global / TripFactory (all offices)</span></div>
     <div class="meta-item"><strong>Initial Focus</strong><span>Inbound UK & Europe</span></div>
     <div class="meta-item"><strong>Revenue Model</strong><span>Transaction fee + % of operated holidays</span></div>
-    <div class="meta-item"><strong>Key Partnership</strong><span>Incoming Europe (Uma Somia)</span></div>
+    <div class="meta-item"><strong>Key Partnership</strong><span>Incoming Europe (Eileen Corrales)</span></div>
     <div class="meta-item"><strong>Funding Source</strong><span>Reallocated European office budgets</span></div>
   </div>
 </header>
+    </div>
 
+    <div class="panel" id="panel-rationale">
 <section>
-  <div class="section-label">Strategic Rationale</div>
+  <div class="label">Strategic Rationale</div>
   <h2>Why this makes sense <em>now</em></h2>
-  <p>The ORN Group currently runs parallel contracting, transport, and cruise operations across multiple offices with duplicated cost bases and fragmented supplier relationships. By designating ORN Holidays as the group's dedicated UK & European DMC, the business captures four compounding advantages simultaneously: cost consolidation, commercial clarity, group revenue generation, and a scalable structure for outbound expansion.</p>
+  <p>The ORN Group currently runs parallel contracting, transport, and cruise operations across multiple offices with duplicated cost bases and fragmented supplier relationships. Designating ORN Holidays as the group's dedicated UK & European DMC captures four compounding advantages simultaneously: cost consolidation, commercial clarity, group revenue generation, and a scalable structure for outbound expansion.</p>
   <div class="pillars">
-    <div class="pillar"><div class="pillar-num">01</div><h3>Eliminate duplication</h3><p>Centralise contracting, transport and cruise management currently spread across EU offices</p></div>
+    <div class="pillar"><div class="pillar-num">01</div><h3>Eliminate duplication</h3><p>Centralise contracting, transport and cruise currently spread across EU offices</p></div>
     <div class="pillar"><div class="pillar-num">02</div><h3>Create a profit centre</h3><p>ORN Holidays earns on every group transaction, not just end customers</p></div>
-    <div class="pillar"><div class="pillar-num">03</div><h3>Leverage existing funding</h3><p>Redirect EU office budgets currently funding duplicated functions to the UK hub</p></div>
-    <div class="pillar"><div class="pillar-num">04</div><h3>Inbound first, outbound later</h3><p>Build operational depth on inbound UK &amp; Europe before extending to outbound markets</p></div>
-    <div class="pillar"><div class="pillar-num">05</div><h3>Scalable infrastructure</h3><p>Systems, supplier contracts and team built for global group volume, not just UK sales</p></div>
+    <div class="pillar"><div class="pillar-num">03</div><h3>Leverage existing funding</h3><p>Redirect EU office budgets funding duplicated functions to the UK hub</p></div>
+    <div class="pillar"><div class="pillar-num">04</div><h3>Inbound first, outbound later</h3><p>Build operational depth on inbound before extending to outbound markets</p></div>
+    <div class="pillar"><div class="pillar-num">05</div><h3>Scalable infrastructure</h3><p>Systems and supplier contracts built for global group volume, not just UK sales</p></div>
   </div>
-  <div class="infobox"><strong>Core principle:</strong> ORN Holidays stops competing with TripFactory / other group offices and instead becomes the engine those offices depend on — for product, pricing, transport, cruise, and coach operations across the UK and Europe.</div>
+  <div class="infobox"><strong>Core principle:</strong> ORN Holidays stops competing with TripFactory and other group offices — instead becoming the engine those offices depend on for product, pricing, transport, cruise, and coach operations across the UK and Europe.</div>
 </section>
+    </div>
 
+    <div class="panel" id="panel-services">
 <section id="services">
-  <div class="section-label">Core Service Lines</div>
+  <div class="label">Core Service Lines</div>
   <h2>What ORN Holidays <em>does</em> for the group</h2>
-  <p>Four distinct service lines, each generating income, each with a clear group mandate and a defined operational owner.</p>
-  <div class="services-grid">
-    <div class="service"><div class="service-accent" style="background:#1a2e4a;"></div><h3>UK & European DMC — Central Contracting</h3><p>Acts as the single commercial contracting authority for all hotel, ground, and experience product across the UK and Europe. All group offices purchase rates through ORN Holidays. Rates are loaded centrally by Ken Newton and Manish Suchde, and distributed via API or rate sheet to all sales offices.</p><span class="service-tag">Inbound · Group-wide</span></div>
-    <div class="service"><div class="service-accent" style="background:#4fb3d4;"></div><h3>Global Cruise Management</h3><p>ORN Holidays manages and operates cruising holidays for the entire group globally — coordinating the ORN Cruise transition (Skyjet → ORN Cruise led by Alia Taub), contracting cruise lines, managing pricing and allotments, and distributing cruise product to all group channels including TAG and TripFactory.</p><span class="service-tag">Global mandate · Alia Taub lead</span></div>
-    <div class="service"><div class="service-accent" style="background:#2d6a9f;"></div><h3>Global Transport Management</h3><p>Owns and operates transport procurement for all ORN global offices. Partners with Adonis Iliopoulos for European ground transport. Manages the Skyjet vehicle fleet and airport transfer network. Sets transfer pricing and SLAs flowing down to each operating office. Transport becomes a managed cost centre with margin recovery through ORN Holidays.</p><span class="service-tag">Global mandate · Alia Taub lead</span></div>
-    <div class="service"><div class="service-accent" style="background:#3a9a6e;"></div><h3>UK & European Coach Tours</h3><p>Designs, manages, and delivers the ORN group's UK and European coach tour programme in partnership with Incoming Europe (Uma Somia, CEO). ORN Holidays is the operating entity; Incoming Europe provides in-country ground services. Tours sold through TripFactory (B2C), TAG (B2B), and as group series departures.</p><span class="service-tag">GIT · Seema Tabbasum oversight</span></div>
-    <div class="service"><div class="service-accent" style="background:#d4a843;"></div><h3>Central Product & Contracting Hub</h3><p>Maintains the master product library: rates, itineraries, visa details, content, and imagery for UK and European destinations. Feeds the ORN Global Product Hub, AUS/NZ Destination Hub, and all future regional tools. India receives product as a fulfilment feed, not as an autonomous contracting entity.</p><span class="service-tag">Commercial authority · UK sign-off</span></div>
-    <div class="service"><div class="service-accent" style="background:#d44c30;"></div><h3>Outbound UK & Europe (Phase 2)</h3><p>Once inbound operations are stabilised and profitable, ORN Holidays expands to operate outbound holidays originating from the UK and Europe — FIT, GIT, and MICE — using the existing contracting base, transport infrastructure, and supplier relationships established in Phase 1.</p><span class="service-tag">Phase 2 · Not initial scope</span></div>
+  <p>Six distinct service lines, each generating income, each with a clear group mandate and a defined operational owner.</p>
+  <div class="block-grid cols-2">
+    <div class="block"><div class="block-accent" style="background:#1a2e4a;"></div><h3>UK & European DMC — Central Contracting</h3><p>Single commercial contracting authority for all hotel, ground, and experience product across UK and Europe. All group offices purchase rates through ORN Holidays. Rates loaded centrally by Ken Newton and Manish Suchde, distributed via API or rate sheet to all sales offices.</p><span class="block-tag">Inbound · Group-wide</span></div>
+    <div class="block"><div class="block-accent" style="background:#4fb3d4;"></div><h3>Global Cruise Management</h3><p>ORN Holidays manages and operates cruising holidays for the entire group globally — coordinating the ORN Cruise transition (Skyjet → ORN Cruise), contracting cruise lines, managing pricing and allotments, distributing cruise product to all group channels including TAG and TripFactory.</p><span class="block-tag">Global mandate · UK-based</span></div>
+    <div class="block"><div class="block-accent" style="background:#2d6a9f;"></div><h3>Global Transport Management</h3><p>Owns transport procurement for all ORN global offices. Partners with Adonis Iliopoulos and the 96+ vehicle fleet for European ground transport. Sets transfer pricing and SLAs flowing down to each operating office. Transport becomes a managed cost centre with margin recovery through ORN Holidays.</p><span class="block-tag">Global mandate · Adonis Iliopoulos</span></div>
+    <div class="block"><div class="block-accent" style="background:#3a9a6e;"></div><h3>UK & European Coach Tours</h3><p>Designs, manages, and delivers the ORN group's UK and European coach tour programme in partnership with Incoming Europe (Eileen Corrales as GM Contracting). ORN Holidays is the operating entity; Incoming Europe provides in-country ground services across 27+ hotel properties in Scotland, England, and Wales.</p><span class="block-tag">GIT · Clinton Thomas QC</span></div>
+    <div class="block"><div class="block-accent" style="background:#d4a843;"></div><h3>Central Product & Contracting Hub</h3><p>Maintains the master product library — rates, itineraries, visa details, content, and imagery for UK and European destinations. Feeds the ORN Global Product Hub and all future regional tools. Rate loading and system accuracy managed centrally via Contract Processing function at 17 Hanover Square.</p><span class="block-tag">Commercial authority · UK sign-off</span></div>
+    <div class="block"><div class="block-accent" style="background:#d44c30;"></div><h3>Outbound UK & Europe (Phase 2)</h3><p>Once inbound operations are stabilised and profitable, ORN Holidays expands to operate outbound holidays originating from the UK and Europe — FIT, GIT, and MICE — using the contracted supplier base, transport infrastructure, and supplier relationships built in Phase 1.</p><span class="block-tag">Phase 2 · Not initial scope</span></div>
   </div>
 </section>
+    </div>
 
+    <div class="panel" id="panel-revenue">
 <section id="revenue">
-  <div class="section-label">Revenue Model</div>
+  <div class="label">Revenue Model</div>
   <h2>How ORN Holidays <em>generates income</em></h2>
-  <p>ORN Holidays earns from the group through two primary mechanisms — a transaction fee applied to all rates loaded and distributed, and a revenue participation on all holidays sold or operated. This creates a recurring, volume-linked income stream independent of end-consumer margin.</p>
-  <div class="revenue-grid">
-    <div class="rev-card primary"><span class="rev-tag trx">Transaction Fee</span><div class="rev-rate">Per booking</div><h3>Group rate transaction fee</h3><p>Applied to every booking made by a group office using ORN Holidays rates — hotels, transfers, tours, cruise allotments. Fixed per-booking or per-segment fee. Volume-linked so income scales automatically with group sales growth.</p></div>
-    <div class="rev-card primary"><span class="rev-tag pct">% Revenue Share</span><div class="rev-rate">% of GTV</div><h3>Holiday sold / operated participation</h3><p>A percentage of gross travel value on every holiday operated by ORN Holidays — coach tours, cruise, transport — flows back as management income. Applies whether sold via TAG, TripFactory, or direct group channels.</p></div>
-    <div class="rev-card"><span class="rev-tag mgmt">Management Fee</span><div class="rev-rate">Per office</div><h3>Central contracting management fee</h3><p>Each group office (USA, AU/NZ, Middle East) pays a periodic management fee for access to centrally contracted rates, the product hub, and technical infrastructure (API feeds, rate sheets). Equivalent to a DMC retainer.</p></div>
-    <div class="rev-card"><span class="rev-tag cst">Cost Recovery</span><div class="rev-rate">Reallocation</div><h3>European office budget reallocation</h3><p>Existing European office budgets — currently funding parallel contracting, transport, and cruise functions — are consolidated into ORN Holidays' UK budget. No new net funding required; structural cost reallocation, not additional spend.</p></div>
+  <p>ORN Holidays earns from the group through two primary mechanisms — a transaction fee applied to all rates distributed, and a revenue participation on all holidays sold or operated. This creates a recurring, volume-linked income stream independent of end-consumer margin.</p>
+  <div class="block-grid cols-4" style="margin-top:2rem;">
+    <div class="rev-block primary"><span class="rev-tag trx">Transaction Fee</span><div class="rev-value">Per booking</div><h3>Group rate transaction fee</h3><p>Applied to every booking made by a group office using ORN Holidays rates — hotels, transfers, tours, cruise allotments. Volume-linked so income scales with group growth.</p></div>
+    <div class="rev-block primary"><span class="rev-tag pct">% Revenue Share</span><div class="rev-value">% of GTV</div><h3>Operated holiday participation</h3><p>A percentage of gross travel value on every holiday operated by ORN Holidays — coach tours, cruise, transport — flows back as management income via TAG, TripFactory, or direct channels.</p></div>
+    <div class="rev-block"><span class="rev-tag mgmt">Management Fee</span><div class="rev-value">Per office</div><h3>Central contracting retainer</h3><p>Each group office (USA, AU/NZ, Middle East) pays a periodic management fee for access to centrally contracted rates, the product hub, and API infrastructure. Equivalent to a DMC retainer.</p></div>
+    <div class="rev-block"><span class="rev-tag cst">Cost Recovery</span><div class="rev-value">Reallocation</div><h3>European budget consolidation</h3><p>European office budgets currently funding parallel contracting, transport, and cruise functions are consolidated into ORN Holidays' UK budget. No new net funding required at launch.</p></div>
   </div>
-  <div class="stat-row">
+  <div class="stats">
     <div class="stat"><div class="stat-value">1</div><div class="stat-label">Contracting entity for all UK & Europe product</div></div>
     <div class="stat"><div class="stat-value">4+</div><div class="stat-label">Group offices purchasing through ORN Holidays</div></div>
-    <div class="stat"><div class="stat-value">3</div><div class="stat-label">Managed service lines: contracting, cruise, transport</div></div>
+    <div class="stat"><div class="stat-value">96+</div><div class="stat-label">Vehicle fleet under group transport mandate</div></div>
     <div class="stat"><div class="stat-value">£0</div><div class="stat-label">New external funding required at launch</div></div>
   </div>
-  <div class="infobox"><strong>Commercial logic:</strong> Every booking a group office makes — whether in Sydney, Dubai, New York, or Chennai — that involves UK or European product, cruise, or transport touches ORN Holidays and generates income. The more the group grows, the more ORN Holidays earns. This aligns incentives across all offices.</div>
+  <div class="infobox"><strong>Commercial logic:</strong> Every booking a group office makes — whether in Sydney, Dubai, New York, or anywhere globally — that involves UK or European product, cruise, or transport touches ORN Holidays and generates income. The more the group grows, the more ORN Holidays earns.</div>
 </section>
+    </div>
 
-<section id="structure">
-  <div class="section-label">Organisational Structure</div>
-  <h2>UK & Europe <em>org applied</em> to the DMC model</h2>
-  <p>The existing UK & Europe commercial structure from the ORN 360 maps directly onto the DMC operating model. Roles retain their current scope but gain a group-wide mandate for the service lines they own.</p>
-
-  <div class="org-tier-label">Group Leadership</div>
-  <div class="org-row">
-    <div class="org-box highlight"><div class="org-role">Global COO / CEO — UK, Europe, USA, AU, ME</div><div class="org-name">Raj Kumar</div><div class="org-div">Overall group mandate</div></div>
-    <div class="org-box highlight"><div class="org-role">CCO / COO — UK & Europe</div><div class="org-name">Jay (Ajay Kawa)</div><div class="org-div">DMC commercial lead — global contracting authority</div></div>
-  </div>
-  <div class="org-arrow">↓</div>
-
-  <div class="org-tier-label">DMC Central Functions — Global Mandate</div>
-  <div class="org-row">
-    <div class="org-box central"><div class="org-role">Transport & Cruise Lead — Global</div><div class="org-name">Alia Taub</div><div class="org-div">Cruise transition · All-office transport</div></div>
-    <div class="org-box central"><div class="org-role">Head of GIT Division</div><div class="org-name">Seema Tabbasum</div><div class="org-div">Coach tours · Group series departures</div></div>
-    <div class="org-box central"><div class="org-role">Director of Product & Supply</div><div class="org-name">Sachin Keni</div><div class="org-div">GIT Europe · Sales manager</div></div>
-  </div>
-  <div class="org-arrow">↓</div>
-
-  <div class="org-tier-label">Contracts & Supplier Management</div>
-  <div class="org-row">
-    <div class="org-box"><div class="org-role">Contracts Manager — UK & Europe</div><div class="org-name">Ken Newton</div><div class="org-div">UK & European hotel contracting</div></div>
-    <div class="org-box"><div class="org-role">Contracts Manager — Worldwide</div><div class="org-name">Manish Suchde</div><div class="org-div">Global supplier base</div></div>
-    <div class="org-box"><div class="org-role">Contracts Manager — Thailand & SE Asia</div><div class="org-name">David Tan</div><div class="org-div">SE Asia product for group</div></div>
-  </div>
-  <div class="org-arrow">↓</div>
-
-  <div class="org-tier-label">Operations, Quality & Regional Support</div>
-  <div class="org-row">
-    <div class="org-box"><div class="org-role">GIT Support & Quality Control</div><div class="org-name">Clinton Thomas</div><div class="org-div">Operations quality</div></div>
-    <div class="org-box"><div class="org-role">European Ground Transport</div><div class="org-name">Adonis Iliopoulos</div><div class="org-div">EU transport partner</div></div>
-    <div class="org-box"><div class="org-role">TAG Relationship — USA & Global</div><div class="org-name">Kerryn Collins</div><div class="org-div">B2B channel management</div></div>
-  </div>
-  <div class="org-arrow">↓</div>
-
-  <div class="org-tier-label">Group Customers (Internal) — Fulfilment & Sales</div>
-  <div class="org-row">
-    <div class="org-box fulfilment"><div class="org-role">India — Fulfilment Only</div><div class="org-name">Lalitha Krishna</div><div class="org-div">No commercial authority · Receives product as feed</div></div>
-    <div class="org-box"><div class="org-role">AU / NZ Office</div><div class="org-name">Sahil Nijhawan · Yukti Kumar</div><div class="org-div">Purchases UK/EU product via ORN Holidays</div></div>
-    <div class="org-box"><div class="org-role">USA Office</div><div class="org-name">TBC</div><div class="org-div">Purchases UK/EU product via ORN Holidays</div></div>
-    <div class="org-box"><div class="org-role">Middle East Office</div><div class="org-name">TBC (CEO role open)</div><div class="org-div">Purchases UK/EU product via ORN Holidays</div></div>
-  </div>
-
-  <div class="infobox"><strong>Key mandate rule:</strong> India operates as fulfilment back-end only. All commercial sign-off for product, pricing, and supplier contracts sits with ORN Holidays UK. TripFactory / ORN group offices are the paying customers of ORN Holidays — they receive product, pricing, and operated services, and pay fees accordingly.</div>
-</section>
-
+    <div class="panel" id="panel-cost-model">
 <section id="costs">
-  <div class="section-label">Cost Model</div>
+  <div class="label">Cost Model</div>
   <h2>Funding the DMC from <em>existing group spend</em></h2>
-  <p>No new external funding is required at launch. The DMC model is funded by reallocating budgets currently deployed across European offices into a single UK-based commercial hub. The net group cost position is neutral or better — while producing a far more capable, centralised operation.</p>
+  <p>No new external funding required at launch. The DMC model is funded by reallocating budgets currently deployed across European offices into a single UK-based hub. The net group cost position is neutral or better — while producing a far more capable, centralised operation.</p>
   <table class="cost-table">
-    <thead><tr><th>Current Cost (European Offices)</th><th>Current State</th><th>DMC Model</th><th>Action</th></tr></thead>
+    <thead><tr><th>Current Cost</th><th>Current State</th><th>DMC Model</th><th>Action</th></tr></thead>
     <tbody>
-      <tr><td>Contracting headcount (duplicated per office)</td><td>Multiple contracts managers across EU offices covering overlapping territories</td><td>Single central contracting team (Ken Newton, Manish Suchde) serving all offices from UK</td><td><span class="badge save">Save</span></td></tr>
-      <tr><td>Transport management costs</td><td>Each office manages its own transfer/transport suppliers independently</td><td>Alia Taub owns transport globally — one team, one set of supplier agreements, group SLAs</td><td><span class="badge move">Consolidate</span></td></tr>
+      <tr><td>Contracting headcount (duplicated across EU offices)</td><td>Multiple contracts managers covering overlapping territories across EU offices</td><td>Single central team (Ken Newton, Manish Suchde) serving all offices from 17 Hanover Square</td><td><span class="badge save">Save</span></td></tr>
+      <tr><td>Transport management costs</td><td>Each office manages its own transfer and transport suppliers independently</td><td>Adonis Iliopoulos / ORN Fleet owns transport globally — one set of supplier agreements, group SLAs</td><td><span class="badge move">Consolidate</span></td></tr>
       <tr><td>Cruise / Skyjet overhead</td><td>Skyjet transitioning to ORN Cruise — cost spread across multiple offices</td><td>ORN Holidays is the cruise operating entity — cost centralised, income flows back via fee</td><td><span class="badge move">Centralise</span></td></tr>
       <tr><td>European office product spend</td><td>Individual offices fund their own product content, itineraries, and destination tools</td><td>ORN Holidays maintains the master product library — all offices access centrally, no duplication</td><td><span class="badge save">Save</span></td></tr>
-      <tr><td>European coach tour operations</td><td>Currently fragmented or managed separately without a central operating structure</td><td>ORN Holidays + Incoming Europe run series departures as a managed programme — pooled marketing, shared cost</td><td><span class="badge pool">Pool</span></td></tr>
-      <tr><td>Tech infrastructure (APIs, product hub, rate tools)</td><td>Various tools in use per office, inconsistent integration</td><td>Single ORN Global Product Hub, Zoho CRM, Attraction World API — all managed from UK</td><td><span class="badge move">Centralise</span></td></tr>
+      <tr><td>European coach tour operations</td><td>Fragmented or managed separately without a central operating structure</td><td>ORN Holidays + Incoming Europe run series departures as a managed programme — pooled marketing, shared cost</td><td><span class="badge pool">Pool</span></td></tr>
+      <tr><td>Tech infrastructure (APIs, product hub, rate tools)</td><td>Various tools in use per office, inconsistent integration</td><td>Single Global Product Hub, Zoho CRM, Attraction World API — all managed from UK</td><td><span class="badge move">Centralise</span></td></tr>
     </tbody>
   </table>
 </section>
+    </div>
 
+    <div class="panel" id="panel-transaction-flow">
 <section>
-  <div class="section-label">Transaction Flow</div>
+  <div class="label">Transaction Flow</div>
   <h2>How a booking <em>flows through</em> the model</h2>
-  <p>From a customer booking in any group office to product delivery in the UK or Europe — showing exactly where ORN Holidays generates income at each step.</p>
+  <p>From a customer booking in any group office to product delivery in the UK or Europe — showing where ORN Holidays generates income at each step.</p>
   <div class="flow">
-    <div class="flow-step"><div class="flow-num">Step 1</div><h3>Group office sells</h3><p>TripFactory B2C, TAG B2B, or group sales office takes booking for UK/Europe</p></div>
+    <div class="flow-step"><div class="flow-num">Step 1</div><h3>Group office sells</h3><p>TripFactory B2C, TAG B2B, or group office takes booking for UK/Europe product</p></div>
     <div class="flow-step"><div class="flow-num">Step 2</div><h3>Request to ORN Holidays</h3><p>Office accesses ORN Holidays rates via API, rate sheet, or the Global Product Hub</p></div>
-    <div class="flow-step"><div class="flow-num">Step 3</div><h3>Transaction fee applied</h3><p>ORN Holidays applies its transaction fee to the booking — logged, invoiced to the office</p></div>
-    <div class="flow-step"><div class="flow-num">Step 4</div><h3>Product confirmed</h3><p>Hotel / transfer / cruise / coach tour confirmed with supplier by ORN Holidays team</p></div>
+    <div class="flow-step"><div class="flow-num">Step 3</div><h3>Transaction fee applied</h3><p>ORN Holidays applies its transaction fee — logged and invoiced to the originating office</p></div>
+    <div class="flow-step"><div class="flow-num">Step 4</div><h3>Product confirmed</h3><p>Hotel / transfer / cruise / coach tour confirmed with supplier by ORN Holidays UK team</p></div>
     <div class="flow-step"><div class="flow-num">Step 5</div><h3>Delivery & % share</h3><p>Holiday operated — ORN Holidays earns % participation on gross value of operated product</p></div>
   </div>
-  <div class="infobox"><strong>India note:</strong> India (Lalitha Krishna) receives confirmed product as a fulfilment feed. India does not hold commercial authority, negotiate rates, or approve supplier agreements. All of this sits with ORN Holidays UK.</div>
 </section>
+    </div>
 
+    <div class="panel" id="panel-roadmap">
 <section id="roadmap">
-  <div class="section-label">Implementation Roadmap</div>
+  <div class="label">Implementation Roadmap</div>
   <h2>Four phases from <em>structure to scale</em></h2>
   <div class="phases">
-    <div class="phase ph1"><div class="phase-label">Phase 1 — Foundation</div><h3>Months 1–3: Establish the DMC entity</h3><ul><li>Formally designate ORN Holidays as the group's UK & European DMC</li><li>Define internal service agreement and fee structure with all group offices</li><li>Consolidate European contracting budgets into UK allocation</li><li>Appoint Alia Taub as global transport & cruise lead under DMC</li><li>Confirm Incoming Europe partnership scope with Uma Somia</li><li>Migrate all group offices to central ORN Holidays rate access</li></ul></div>
-    <div class="phase ph2"><div class="phase-label">Phase 2 — Operate Inbound</div><h3>Months 3–9: Launch inbound services at scale</h3><ul><li>Launch UK & European coach tour programme (series departures)</li><li>Complete ORN Cruise transition from Skyjet — full product on-sale</li><li>Transport SLAs agreed and distributed to all group offices</li><li>Global Product Hub live — all offices accessing centralised rates</li><li>Transaction fee invoicing live with AU/NZ, USA, Middle East offices</li><li>First group management fee invoices issued</li></ul></div>
-    <div class="phase ph3"><div class="phase-label">Phase 3 — Optimise & Report</div><h3>Months 9–18: Measure, refine, grow</h3><ul><li>Zoho CRM live — full supplier and booking pipeline visibility</li><li>Quarterly group income reporting from DMC fees and % participation</li><li>Cost-saving audit vs pre-consolidation European spend baseline</li><li>Expand coach tour programme based on departure fill rates</li><li>Review transport pricing SLAs with Adonis Iliopoulos</li><li>Assess Middle East CEO appointment and regional growth</li></ul></div>
-    <div class="phase ph4"><div class="phase-label">Phase 4 — Outbound</div><h3>Months 18+: Launch UK & European outbound</h3><ul><li>Extend ORN Holidays scope to outbound FIT and GIT from UK/Europe</li><li>Leverage contracted supplier base for outbound product</li><li>TripFactory B2C becomes primary outbound distribution channel</li><li>MICE programme added as managed service for group</li><li>Explore additional long-haul partnerships (Macau, Cathay model)</li></ul></div>
+    <div class="phase ph1"><div class="phase-lbl">Phase 1 — Foundation</div><h3>Months 1–3: Establish the DMC entity</h3><ul><li>Formally designate ORN Holidays as the group's UK & European DMC</li><li>Define internal service agreement and fee structure with all group offices</li><li>Consolidate European contracting budgets into UK allocation</li><li>Confirm Incoming Europe partnership scope with Eileen Corrales</li><li>Migrate all group offices to central ORN Holidays rate access</li><li>Hire UK CFO to manage European finance centralisation</li></ul></div>
+    <div class="phase ph2"><div class="phase-lbl">Phase 2 — Operate Inbound</div><h3>Months 3–9: Launch inbound services at scale</h3><ul><li>Launch UK & European coach tour programme (series departures)</li><li>Complete ORN Cruise transition from Skyjet — full product on-sale</li><li>Hire Cruise Manager, Reservations Manager, Product Manager, Ops Coordinator</li><li>Transport SLAs agreed and distributed to all group offices</li><li>Transaction fee invoicing live with AU/NZ, USA, Middle East offices</li><li>Global Product Hub live — all offices accessing centralised rates</li></ul></div>
+    <div class="phase ph3"><div class="phase-lbl">Phase 3 — Optimise & Report</div><h3>Months 9–18: Measure, refine, grow</h3><ul><li>Zoho CRM live — full supplier and booking pipeline visibility</li><li>Quarterly group income reporting from DMC fees and % participation</li><li>Cost-saving audit vs pre-consolidation European spend baseline</li><li>Expand coach tour programme based on departure fill rates</li><li>Review transport pricing SLAs with Adonis Iliopoulos</li><li>Middle East CEO appointment and regional growth assessment</li></ul></div>
+    <div class="phase ph4"><div class="phase-lbl">Phase 4 — Outbound</div><h3>Months 18+: Launch UK & European outbound</h3><ul><li>Extend ORN Holidays scope to outbound FIT and GIT from UK/Europe</li><li>Leverage contracted supplier base for outbound product</li><li>TripFactory B2C becomes primary outbound distribution channel</li><li>MICE programme added as managed service for group</li><li>Explore additional long-haul partnerships (Macau, Cathay model)</li></ul></div>
   </div>
 </section>
+    </div>
 
+    <div class="panel" id="panel-partnerships">
 <section>
-  <div class="section-label">Strategic Partnerships</div>
+  <div class="label">Strategic Partnerships</div>
   <h2>Partnerships that <em>underpin the model</em></h2>
-  <div class="card-grid">
-    <div class="card"><div class="card-icon">🤝</div><h3>Incoming Europe</h3><p>Uma Somia (CEO) — ground partner for UK and European coach tours. ORN Holidays is the operating and commercial entity; Incoming Europe delivers in-country ground services. Joint programme, shared departures.</p></div>
-    <div class="card"><div class="card-icon">🚢</div><h3>ORN Cruise (Skyjet transition)</h3><p>Alia Taub leads the three-phase Skyjet → ORN Cruise transition. ORN Holidays is the group cruise operator — contracting cruise lines, managing allotments, distributing to TAG and TripFactory group-wide.</p></div>
-    <div class="card"><div class="card-icon">🚌</div><h3>Adonis Iliopoulos (EU Transport)</h3><p>European ground transport partner, reporting direct to Raj. Under the DMC model, transport agreements are managed centrally by ORN Holidays with Adonis as the operational EU partner.</p></div>
-    <div class="card"><div class="card-icon">💻</div><h3>Attraction World (API)</h3><p>API integration in progress — attractions and experiences product feeds into the central ORN Holidays rate library, distributed to all group offices via the Global Product Hub.</p></div>
-    <div class="card"><div class="card-icon">✈️</div><h3>Domes Resorts / Macau Tourism</h3><p>Craig Jeffs (Domes) and Kunal (Macau / Cathay Pacific) — luxury and long-haul partnerships managed by ORN Holidays as part of the central product library for group-wide distribution.</p></div>
-    <div class="card"><div class="card-icon">🌏</div><h3>TripFactory / TAG (Group Customers)</h3><p>TripFactory (B2C) and TAG (B2B agent platform) are the primary sales channels and the primary internal customers of ORN Holidays. Every booking through these channels involving UK/EU product generates DMC income.</p></div>
+  <div class="block-grid cols-3">
+    <div class="block"><div class="block-accent" style="background:#3a9a6e;"></div><h3>Incoming Europe</h3><p>Eileen Corrales (GM Contracting) — primary European DMC partner. 27+ hotel properties across Scotland, England, and Wales. Managed by Ken Newton. ORN Holidays is the operating and commercial entity; Incoming Europe delivers in-country ground services.</p><span class="block-tag">Active partner</span></div>
+    <div class="block"><div class="block-accent" style="background:#4fb3d4;"></div><h3>ORN Cruise (Skyjet transition)</h3><p>Three-phase Skyjet → ORN Cruise transition. ORN Holidays is the group cruise operator — contracting cruise lines, managing allotments, distributing to TAG and TripFactory group-wide. All bookings handled through 17 Hanover Square.</p><span class="block-tag">UK-based · All bookings</span></div>
+    <div class="block"><div class="block-accent" style="background:#2d6a9f;"></div><h3>ORN Transport — Adonis Iliopoulos</h3><p>96+ vehicle fleet — 30+ touring coaches, 65+ Mercedes-Benz private transfer vehicles. ISO 27001 certified. European ground transport partner reporting to Raj Kumar. Centrally managed under ORN Holidays transport mandate.</p><span class="block-tag">96+ vehicles · ISO 27001</span></div>
+    <div class="block"><div class="block-accent" style="background:#d4a843;"></div><h3>TAG — Travel Answers Group</h3><p>B2B agent network and credits programme managed by Kerryn Collins and Linda Furber. Global B2B interface with UK as primary commercial contact. Primary distribution channel for group holidays and cruise product.</p><span class="block-tag">B2B global network</span></div>
+    <div class="block"><div class="block-accent" style="background:#d44c30;"></div><h3>Baris Intepe — Turkey & ME Gateway</h3><p>Turkey, Eastern Mediterranean, and Middle East gateway. Acting as market intelligence lead ahead of the Middle East CEO appointment. Managed by Ajay Kawa and Manish Suchde.</p><span class="block-tag">Turkey · Eastern Med · ME</span></div>
+    <div class="block"><div class="block-accent" style="background:#1a2e4a;"></div><h3>TripFactory / ORN Holidays B2C</h3><p>Consumer-facing booking platform for group tours, package holidays, and escorted travel. ORN's primary B2C channel. TripFactory and all group offices are the paying customers of ORN Holidays for UK/EU product, cruise, and transport.</p><span class="block-tag">Primary B2C channel</span></div>
   </div>
 </section>
+    </div>
 
+    <div class="panel" id="panel-principles">
 <section id="principles">
-  <div class="section-label">Operating Principles</div>
+  <div class="label">Operating Principles</div>
   <h2>The rules that <em>govern the model</em></h2>
-  <div class="principles">
-    <div class="principle"><div class="num">I</div><h3>Commercial authority stays in UK</h3><p>All supplier contracts, rate approvals, and product decisions require ORN Holidays UK sign-off. India is fulfilment only.</p></div>
-    <div class="principle"><div class="num">II</div><h3>One rate, one source</h3><p>Every group office purchases UK/EU product from the same centrally contracted rate library. No parallel contracting by regional offices.</p></div>
-    <div class="principle"><div class="num">III</div><h3>Inbound before outbound</h3><p>Operational depth on inbound is built first. Outbound scope is added only once the inbound DMC operation is profitable and stable.</p></div>
-    <div class="principle"><div class="num">IV</div><h3>Fee transparency</h3><p>All transaction fees, % participations, and management fees are documented in a clear internal service agreement visible to all group offices.</p></div>
-    <div class="principle"><div class="num">V</div><h3>No new funding at launch</h3><p>The DMC is capitalised from reallocated European office budgets. Budget consolidation is the funding mechanism, not external investment.</p></div>
-    <div class="principle"><div class="num">VI</div><h3>Tech-first infrastructure</h3><p>The Global Product Hub, Zoho CRM, and API integrations are the commercial backbone. Manual rate distribution is a transition state, not a target.</p></div>
+  <div class="block-grid cols-3">
+    <div class="block"><h3 style="color:var(--gold);font-size:1rem;margin-bottom:0.5rem;">I</h3><h3>Commercial authority stays in UK</h3><p>All supplier contracts, rate approvals, and product decisions require ORN Holidays UK sign-off. No commercial contracting authority outside 17 Hanover Square.</p></div>
+    <div class="block"><h3 style="color:var(--gold);font-size:1rem;margin-bottom:0.5rem;">II</h3><h3>One rate, one source</h3><p>Every group office purchases UK/EU product from the same centrally contracted rate library. No parallel contracting by regional offices.</p></div>
+    <div class="block"><h3 style="color:var(--gold);font-size:1rem;margin-bottom:0.5rem;">III</h3><h3>Inbound before outbound</h3><p>Operational depth on inbound is built first. Outbound scope is added only once the inbound DMC operation is profitable and stable.</p></div>
+    <div class="block"><h3 style="color:var(--gold);font-size:1rem;margin-bottom:0.5rem;">IV</h3><h3>Fee transparency</h3><p>All transaction fees, % participations, and management fees are documented in a clear internal service agreement visible to all group offices.</p></div>
+    <div class="block"><h3 style="color:var(--gold);font-size:1rem;margin-bottom:0.5rem;">V</h3><h3>No new funding at launch</h3><p>The DMC is capitalised from reallocated European office budgets. Budget consolidation is the funding mechanism, not external investment.</p></div>
+    <div class="block"><h3 style="color:var(--gold);font-size:1rem;margin-bottom:0.5rem;">VI</h3><h3>Tech-first infrastructure</h3><p>Zoho CRM, the Global Product Hub, and API integrations are the commercial backbone. Manual rate distribution is a transition state, not a target.</p></div>
   </div>
 </section>
+    </div>
 
-<div class="colour-bar"></div>
-<footer>
-  <img src="data:image/png;base64,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" alt="ORN">
-  <div class="footer-meta">ORN Holdings · HCL Group · 17 Hanover Square, London W1S 1BN<br>UK & European DMC — Business Model Proposal · Confidential — Internal Document</div>
-</footer>
+  </main>
+</div>
 
 <script>
-const sections = document.querySelectorAll('section[id], header[id]');
-const navLinks = document.querySelectorAll('.nav a');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      const link = document.querySelector('.nav a[href="#' + e.target.id + '"]');
-      if (link) link.classList.add('active');
-    }
-  });
-}, { rootMargin: '-20% 0px -70% 0px' });
-sections.forEach(s => observer.observe(s));
+function showPanel(id, el) {
+  // hide all panels
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  // show target
+  const panel = document.getElementById('panel-' + id);
+  if (panel) {
+    panel.classList.add('active');
+    document.getElementById('main').scrollTop = 0;
+  }
+  if (el) el.classList.add('active');
+}
 </script>
 </body>
 </html>
