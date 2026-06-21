@@ -21,7 +21,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{height:100%;overflow:hidden;}
-body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.65;display:flex;flex-direction:column;}
+body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.65;display:flex;flex-direction:column;height:100vh;}
 
 /* TOPBAR */
 .topbar{height:52px;flex-shrink:0;background:#000;border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:200;}
@@ -32,10 +32,10 @@ body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',
 .colour-strip span{display:block;width:8px;height:100%;}
 
 /* APP */
-.app{display:flex;flex:1;overflow:hidden;}
+.app{display:flex;flex:1;min-height:0;overflow:hidden;}
 
 /* SIDEBAR */
-.sidebar{width:260px;flex-shrink:0;background:#0a0a0a;border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto;}
+.sidebar{width:260px;flex-shrink:0;background:#0a0a0a;border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto;height:100%;}
 :root{--sidebar-w:260px;}
 .sidebar-group-label{font-size:0.58rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);padding:1.25rem 1.4rem 0.45rem;}
 .nav-item{display:block;padding:0;margin:0.35rem 0.75rem;border-radius:8px;cursor:pointer;border:1px solid rgba(255,255,255,0.07);background:var(--surface);transition:all 0.15s;user-select:none;overflow:hidden;}
@@ -51,9 +51,9 @@ body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',
 .sidebar-foot{margin-top:auto;padding:1.2rem 1.4rem;border-top:1px solid var(--border);font-size:0.62rem;color:rgba(255,255,255,0.7);line-height:1.7;}
 
 /* MAIN */
-.main{flex:1;overflow-y:auto;background:var(--black);}
+.main{flex:1;overflow-y:auto;overflow-x:hidden;background:var(--black);min-height:0;}
 .panel{display:none;animation:fin 0.2s ease;}
-.panel.active{display:block;}
+.panel.active{display:block;min-height:100%;}
 @keyframes fin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 /* ── TYPOGRAPHY ── */
@@ -302,6 +302,13 @@ p:last-child{margin-bottom:0;}
 .bro-cta .cta-item strong{display:block;color:var(--gold);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px;}
 .bro-cta .cta-item span{font-size:0.85rem;color:var(--white);}
 
+
+/* ── REVENUE GRID (missing) ── */
+.revenue-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:1.75rem;}
+.rev-block.primary{background:rgba(212,168,67,0.07);}
+.rev-value{font-size:1.35rem;font-weight:800;color:var(--white);line-height:1;margin-bottom:0.35rem;letter-spacing:-0.02em;}
+.rev-block h3{font-size:0.83rem;color:var(--white);margin-bottom:0.35rem;}
+.rev-block p{font-size:0.74rem;color:rgba(255,255,255,0.75);margin:0;font-weight:300;line-height:1.55;}
 </style>
 </head>
 <body>
@@ -574,7 +581,7 @@ p:last-child{margin-bottom:0;}
 </div>
 </div>
 
-id="panel-commercial">
+<div class="panel" id="panel-commercial">
 <div class="page-wrap">
   <div class="label">Commercial Model</div>
   <h2>Revenue, cost &amp; <em>how we're funded</em></h2>
@@ -588,7 +595,7 @@ id="panel-commercial">
     <div class="rev-block primary"><span class="rev-tag pct">% Revenue Share</span><div class="rev-value">% of GTV</div><h3>Operated departure participation</h3><p>Percentage of gross travel value on every escorted tour departure and transfer operated by ORN Connect (previously Skyjet operations). One entity — one P&L line.</p></div>
     <div class="rev-block"><span class="rev-tag mgmt">Inbound Commission</span><div class="rev-value">Net margin</div><h3>Nexus inbound bookings</h3><p>Net rate margin on all inbound bookings handled by ORN Connect's Nexus reservations team — FIT, GIT, groups, transfers, cruise.</p></div>
     <div class="rev-block"><span class="rev-tag mgmt">Management Fee</span><div class="rev-value">Per office</div><h3>Global client office retainer</h3><p>Each group office (USA, AU/NZ, Middle East) pays a periodic management fee for access to ORN Connect contracted rates, the Nexus product hub, and API infrastructure.</p></div>
-    <div class="rev-block" style="grid-column:span 2;"><span class="rev-tag cst">Budget Reallocation</span><div class="rev-value">Consolidated</div><h3>European office budget consolidation</h3><p>European office budgets currently funding duplicate contracting (previously ORN Holidays) and transport (previously Skyjet) are consolidated into a single ORN Connect UK budget. No new net external funding required at launch. Nexus reservations team self-funds from inbound commission by Phase 2.</p></div>
+    <div class="rev-block" style="grid-column:1/-1;"><span class="rev-tag cst">Budget Reallocation</span><div class="rev-value">Consolidated</div><h3>European office budget consolidation</h3><p>European office budgets currently funding duplicate contracting (previously ORN Holidays) and transport (previously Skyjet) are consolidated into a single ORN Connect UK budget. No new net external funding required at launch. Nexus reservations team self-funds from inbound commission by Phase 2.</p></div>
   </div>
   <div class="stats">
     <div class="stat"><div class="stat-value">1</div><div class="stat-label">Entity · one P&L</div></div>
@@ -1069,7 +1076,6 @@ id="panel-commercial">
       <div class="cta-item"><strong>Contracting</strong><span>Ken Newton &middot; Manish Suchde</span></div>
     </div>
   </div>
-</div>
 </div>
 
 </main>
