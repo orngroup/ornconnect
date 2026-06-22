@@ -631,150 +631,212 @@ p:last-child{margin-bottom:0;}
 
 <div class="panel" id="panel-operations">
 <div class="page-wrap">
-  <div class="label">Operations &amp; Team</div>
-  <h2>UK runs all sales &amp; ops. <em>End to end.</em></h2>
-  <p>ORN Connect UK takes on full sales and operations responsibility — managing all inbound enquiries from US, Australia, Middle East offices and trade agents, handling the complete quote cycle, supplier pricing, and all pre-departure management. Below: the booking flow, the gate schedule, and the full team.</p>
+  <div class="label">Operations &amp; Workflow</div>
+  <h2>UK manages all sales &amp; ops — <em>end to end</em></h2>
+  <p>ORN Connect UK takes on full sales and operations responsibility for all inbound enquiries from ORN Australia, TAG Australia, TAG USA, India, Middle East offices, and trade agents. The workflows below are based on the confirmed ORN/Nexus AU operating model — Phase 1 adapts this for the UK team at 17 Hanover Square, Phase 2 mirrors the full Kryz &amp; Martha workflow with a local UK ops team.</p>
 
-  <div class="label" style="margin-top:1.5rem;">Sales &amp; Booking Flow</div>
-  
-  
-  
-  <div class="label" style="margin-top:1.75rem;">Flow A — Inbound trade agent booking</div>
-  <div class="flow" style="margin-top:0.75rem;">
-    <div class="flow-step"><div class="flow-num">1</div><h3>Agent enquiry</h3><p>Trade agent contacts ORN Connect via Nexus portal, email or phone</p></div>
-    <div class="flow-step"><div class="flow-num">2</div><h3>Quote via Nexus</h3><p>Res team prices using ORN Connect centrally contracted rates on Nexus</p></div>
-    <div class="flow-step"><div class="flow-num">3</div><h3>Confirmed</h3><p>Booking confirmed through Nexus. Inbound commission margin captured on P&amp;L</p></div>
-    <div class="flow-step"><div class="flow-num">4</div><h3>Transport allocated</h3><p>ORN Connect transport team allocates coach or transfer from own fleet</p></div>
-    <div class="flow-step"><div class="flow-num">5</div><h3>Operate &amp; earn</h3><p>ORN Connect operates. All margin — contracting, operations, handling — on one P&amp;L</p></div>
-  </div>
-  <div class="label" style="margin-top:1.75rem;">Flow B — TripFactory / group office selling Europe inbound</div>
-  <div class="flow" style="margin-top:0.75rem;">
-    <div class="flow-step"><div class="flow-num">1</div><h3>Office sells</h3><p>TripFactory or AU/USA/ME office sells UK &amp; Europe inbound via their channel</p></div>
-    <div class="flow-step"><div class="flow-num">2</div><h3>Nexus request</h3><p>Booking hits ORN Connect via Nexus — rates, availability, group configuration</p></div>
-    <div class="flow-step"><div class="flow-num">3</div><h3>Transaction fee</h3><p>ORN Connect applies transaction fee to the group office for using contracted rates</p></div>
-    <div class="flow-step"><div class="flow-num">4</div><h3>ORN Connect operates</h3><p>Hotels, coaches, guides confirmed and operated by ORN Connect. QC gate with Clinton Thomas</p></div>
-    <div class="flow-step"><div class="flow-num">5</div><h3>Income captured</h3><p>Transaction fee + departure % — both on ORN Connect P&amp;L. Single entity reporting</p></div>
+  <!-- PHASE 1 -->
+  <div class="label" style="margin-top:2rem;">Phase 1 — UK Sales Support Model</div>
+  <p style="font-size:0.85rem;color:rgba(255,255,255,0.75);margin-bottom:1.25rem;">Bookings processed by UK sales support team. Phase 1 success depends on activities being in Nexus so the sales support team can book them directly. Manual pricing required for anything outside the system.</p>
+
+  <div class="block-grid cols-1" style="margin-top:0;">
+    <div class="block" style="padding:0;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);">
+
+        <div style="background:var(--surface);padding:1.1rem 1rem;">
+          <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Step 1</div>
+          <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:6px;">Enquiry Received</div>
+          <div style="font-size:0.72rem;color:rgba(255,255,255,0.75);line-height:1.6;">Booking comes from Agent or TAG. At proposal stage, agents may call to price activities not yet in Nexus — these must be priced manually by sales support.</div>
+        </div>
+
+        <div style="background:var(--surface);padding:1.1rem 1rem;">
+          <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Step 2 — 72hrs</div>
+          <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:6px;">Sales Support Confirms</div>
+          <div style="font-size:0.72rem;color:rgba(255,255,255,0.75);line-height:1.6;">Confirmed at component level within 72hrs — <em>except</em> transfers (intercity/airport) and train tickets if departure is beyond 3 months.</div>
+        </div>
+
+        <div style="background:var(--surface);padding:1.1rem 1rem;">
+          <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Step 3</div>
+          <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:6px;">Ops Tracker Updated</div>
+          <div style="font-size:0.72rem;color:rgba(255,255,255,0.75);line-height:1.6;">Confirmed booking placed on shared ops tracker. Operations team checks and reconfirms any pending services. All card transactions recorded on shared sheet mapped to booking &amp; amount.</div>
+        </div>
+
+        <div style="background:var(--surface);padding:1.1rem 1rem;">
+          <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Step 4</div>
+          <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:6px;">Payout Created</div>
+          <div style="font-size:0.72rem;color:rgba(255,255,255,0.75);line-height:1.6;">UK Operations creates a payout for each service — no payout means no payment to vendor. Shared card transaction sheet records all payments mapped to each booking.</div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
+  <!-- DEPARTURE GATES -->
   <div class="label" style="margin-top:1.75rem;">Pre-Departure Gate Schedule</div>
-  <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:1rem;">All bookings follow the ORN Connect gate schedule. Long advance bookings require the additional T-45 reconfirmation gate.</p>
   <div class="block-grid cols-4" style="margin-top:0.75rem;">
+
     <div class="block" style="border-top:3px solid #1a2e4a;text-align:center;">
-      <div style="font-size:1.6rem;font-weight:800;color:var(--gold);margin-bottom:0.4rem;">T-45</div>
-      <h3 style="font-size:0.82rem;">Advance Reconfirmation</h3>
-      <p style="font-size:0.72rem;">Long-lead bookings only. All suppliers reconfirmed, hotel allotments and coach allocation locked in.</p>
-      <span class="block-tag">Long-lead only</span>
+      <div style="font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:0.4rem;">D-60</div>
+      <h3 style="font-size:0.82rem;">All Paid &amp; Processed</h3>
+      <p style="font-size:0.72rem;">All bookings and activities must be paid and processed — including anything not yet confirmed. No exceptions.</p>
+      <span class="block-tag">Hard deadline · All bookings</span>
     </div>
+
     <div class="block" style="border-top:3px solid #2d6a9f;text-align:center;">
-      <div style="font-size:1.6rem;font-weight:800;color:var(--gold);margin-bottom:0.4rem;">T-30</div>
-      <h3 style="font-size:0.82rem;">Full Confirmation</h3>
-      <p style="font-size:0.72rem;">Rooming lists to hotels. Coach schedule confirmed. Final itinerary locked.</p>
-      <span class="block-tag">All bookings</span>
+      <div style="font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:0.4rem;">D-45</div>
+      <h3 style="font-size:0.82rem;">6-Point Check Complete</h3>
+      <p style="font-size:0.72rem;">All 6 booking points completed for every service — operator, phone, confirmation, time, departure location, pick-up location. See format below.</p>
+      <span class="block-tag">All 6 points · Every service</span>
     </div>
+
     <div class="block" style="border-top:3px solid #4fb3d4;text-align:center;">
-      <div style="font-size:1.6rem;font-weight:800;color:var(--gold);margin-bottom:0.4rem;">T-14</div>
-      <h3 style="font-size:0.82rem;">Documentation</h3>
-      <p style="font-size:0.72rem;">Passenger manifests final. Vouchers and pre-departure packs issued to agents and passengers.</p>
-      <span class="block-tag">All bookings</span>
+      <div style="font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:0.4rem;">D-35</div>
+      <h3 style="font-size:0.82rem;">QC &amp; Document Check</h3>
+      <p style="font-size:0.72rem;"><strong style="color:#fff;">Phase 1:</strong> UK team QC checks. <strong style="color:#fff;">Phase 2:</strong> Document team in Melbourne QC checks all bookings.</p>
+      <span class="block-tag">QC review · All documents</span>
     </div>
+
     <div class="block" style="border-top:3px solid #3a9a6e;text-align:center;">
-      <div style="font-size:1.6rem;font-weight:800;color:var(--gold);margin-bottom:0.4rem;">T-7</div>
-      <h3 style="font-size:0.82rem;">QC Sign-Off</h3>
-      <p style="font-size:0.72rem;">Clinton Thomas QC clearance. No departure proceeds without T-7 sign-off.</p>
-      <span class="block-tag">Clinton Thomas · All GIT</span>
+      <div style="font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:0.4rem;">D-30</div>
+      <h3 style="font-size:0.82rem;">Documents to Client</h3>
+      <p style="font-size:0.72rem;"><strong style="color:#fff;">Phase 1:</strong> UK sends documents. <strong style="color:#fff;">Phase 2:</strong> Melbourne team sends documents to the client.</p>
+      <span class="block-tag">Client documents issued</span>
+    </div>
+
+  </div>
+
+  <div class="infobox" style="margin-top:1rem;">
+    <strong>Phase 1 note:</strong> Phase 1 success depends on activities being loaded in Nexus so the sales support team can confirm them directly. Any activity not in the system requires manual pricing and a separate confirmation process. Building Nexus product completeness is therefore a Phase 1 priority.
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="label" style="margin-top:2rem;">Phase 2 — Full UK Ops Model (Kryz &amp; Martha workflow)</div>
+  <p style="font-size:0.85rem;color:rgba(255,255,255,0.75);margin-bottom:1.25rem;">The ideal end-state. A local UK ops team handles all confirmations, changes, and pre-departure checks. Melbourne handles document QC and client dispatch. This mirrors the workflow previously operated by Kryz &amp; Martha.</p>
+
+  <div class="block-grid cols-2" style="margin-top:0.75rem;">
+    <div class="block" style="border-top:3px solid var(--gold);">
+      <div class="block-accent" style="background:var(--gold);"></div>
+      <h3>Sales Support Team</h3>
+      <p>Responsible for confirming all bookings and assisting at the proposal level when activities aren't available in Nexus. Confirms at component level within 72hrs (excluding transfers and train tickets beyond 3 months). Handles manual pricing for off-system activities.</p>
+      <span class="block-tag">72hr turnaround · Component level</span>
+    </div>
+    <div class="block" style="border-top:3px solid #2d6a9f;">
+      <div class="block-accent" style="background:#2d6a9f;"></div>
+      <h3>Ops Support Team — UK Local</h3>
+      <p>Once booking is confirmed, UK ops team manages all changes, pre-departure checks, and ground delivery. Booking queues to Europe Ops and is processed within 72hrs. Ops creates all payouts per service — no payout = no vendor payment. Updates shared ops tracker throughout.</p>
+      <span class="block-tag">Changes · Pre-departure · Ground delivery</span>
     </div>
   </div>
 
-  <div class="infobox" style="margin-top:1.25rem;">
-    <strong>Phase 1 payments:</strong> ORN Connect UK invoices the Australia office. Australia collects from the originating office and settles suppliers. <strong style="color:var(--gold);">Phase 2:</strong> UK collects all payments end-to-end directly. UK CFO hire required before Phase 2 opens.
+  <!-- 6 POINTS FORMAT -->
+  <div class="label" style="margin-top:2rem;">The 6-Point Booking Format — Required for Every Service</div>
+  <p style="font-size:0.85rem;color:rgba(255,255,255,0.75);margin-bottom:1rem;">Every confirmed booking must have all 6 points completed by D-45. If phone number or address is not on the email, find it online. Phone numbers must include country code prefix. Time format: 00:00 AM.</p>
+
+  <div class="block-grid cols-3" style="margin-top:0.75rem;">
+
+    <div class="block" style="border-top:3px solid #3a9a6e;">
+      <div class="block-accent" style="background:#3a9a6e;"></div>
+      <h3>&#x1F3F7; Tour — With Pick-Up</h3>
+      <div style="font-family:monospace;font-size:0.75rem;background:rgba(0,0,0,0.3);border-radius:6px;padding:0.85rem;margin-top:0.5rem;line-height:2;color:rgba(255,255,255,0.85);">
+        Operator:<br>
+        Phone:<br>
+        Confirmation:<br>
+        Pick Up Time:<br>
+        Pick Up Location:
+      </div>
+    </div>
+
+    <div class="block" style="border-top:3px solid #3a9a6e;">
+      <div class="block-accent" style="background:#3a9a6e;"></div>
+      <h3>&#x1F3F7; Cruise or Tour — No Pick-Up</h3>
+      <div style="font-family:monospace;font-size:0.75rem;background:rgba(0,0,0,0.3);border-radius:6px;padding:0.85rem;margin-top:0.5rem;line-height:2;color:rgba(255,255,255,0.85);">
+        Operator:<br>
+        Phone:<br>
+        Confirmation:<br>
+        Departure Time:<br>
+        Departure Location:
+      </div>
+    </div>
+
+    <div class="block" style="border-top:3px solid #4fb3d4;">
+      <div class="block-accent" style="background:#4fb3d4;"></div>
+      <h3>&#x1F697; Transfer — Arrival</h3>
+      <div style="font-family:monospace;font-size:0.75rem;background:rgba(0,0,0,0.3);border-radius:6px;padding:0.85rem;margin-top:0.5rem;line-height:2;color:rgba(255,255,255,0.85);">
+        Operator:<br>
+        Contact:<br>
+        Confirmation:<br>
+        Pick Up Time:<br>
+        Pick Up Location:<br>
+        FLIGHT arrives CITY<br>
+        Drop Off Location:
+      </div>
+    </div>
+
+    <div class="block" style="border-top:3px solid #4fb3d4;grid-column:1/-1;">
+      <div class="block-accent" style="background:#4fb3d4;"></div>
+      <h3>&#x1F697; Transfer — Departure</h3>
+      <div style="font-family:monospace;font-size:0.75rem;background:rgba(0,0,0,0.3);border-radius:6px;padding:0.85rem;margin-top:0.5rem;line-height:2;color:rgba(255,255,255,0.85);">
+        Operator: &nbsp;&nbsp;Contact: &nbsp;&nbsp;Confirmation:<br>
+        Pick Up Time: &nbsp;&nbsp;Pick Up Location:<br>
+        Drop Off Location: FLIGHT CITY departs at TIME
+      </div>
+    </div>
+
   </div>
 
-  <div class="label" style="margin-top:2rem;">The Team</div>
-  
-  
-  
+  <!-- TEAMS -->
+  <div class="label" style="margin-top:2rem;">Payment &amp; Tracking Rules</div>
+  <div class="block-grid cols-2" style="margin-top:0.75rem;">
+    <div class="block" style="border-top:3px solid var(--gold);">
+      <div class="block-accent" style="background:var(--gold);"></div>
+      <h3>No Payout = No Payment</h3>
+      <p>UK Operations must create a payout for every service before any vendor payment is released. Payouts are tracked on the shared card transaction sheet — each transaction mapped to a specific booking and amount. No exceptions.</p>
+      <span class="block-tag">Shared sheet · All card transactions</span>
+    </div>
+    <div class="block" style="border-top:3px solid var(--gold);">
+      <div class="block-accent" style="background:var(--gold);"></div>
+      <h3>Phase 1 — Payments via Australia</h3>
+      <p>In Phase 1, all payments are processed via the ORN Australia office. UK Operations raises the payout and notifies AU, who releases payment to the vendor. Phase 2 transitions to full UK end-to-end payment management once the UK CFO is in place.</p>
+      <span class="block-tag">Phase 1: via AU &nbsp;·&nbsp; Phase 2: UK end-to-end</span>
+    </div>
+  </div>
 
+  <!-- FULL TEAM -->
+  <div class="label" style="margin-top:2rem;">The Team</div>
   <div class="team-section-label">Senior Leadership</div>
   <div class="team-row cols-1">
     <div class="team-card gold">
       <div class="tc-entity orn">ORN Connect</div>
       <div class="tc-role">CEO — UK &amp; Europe</div>
       <div class="tc-name">Ajay Kawa</div>
-      <div class="tc-desc">Chief Executive Officer · UK &amp; Europe. Accountable for all ORN Connect functions — commercial contracting, transport division (previously Skyjet), and Nexus reservations. Single P&L. 17 Hanover Square.</div>
-      <div class="tc-tags"><span class="tc-tag gold">London HQ</span><span class="tc-tag gold">All functions</span><span class="tc-tag gold">Single P&L</span></div>
+      <div class="tc-desc">Chief Executive Officer · UK &amp; Europe. Accountable for all ORN Connect functions — commercial contracting, transport division (previously Skyjet), and Nexus reservations. Single P&amp;L. 17 Hanover Square.</div>
+      <div class="tc-tags"><span class="tc-tag gold">London HQ</span><span class="tc-tag gold">All functions</span><span class="tc-tag gold">Single P&amp;L</span></div>
     </div>
   </div>
-
   <div class="team-section-label">Contracts &amp; Partnerships</div>
   <div class="team-row cols-3">
-    <div class="team-card gold">
-      <div class="tc-entity orn">ORN Connect</div>
-      <div class="tc-role">Contracts Manager — UK &amp; Europe</div>
-      <div class="tc-name">Ken Newton</div>
-      <div class="tc-desc">Hotel &amp; Supplier Contracting · European Portfolio. 27+ properties across Scotland, England, Wales. Field-based Europe. Primary Incoming Europe contact.</div>
-      <div class="tc-reports">↑ Ajay Kawa</div>
-      <div class="tc-tags"><span class="tc-tag gold">27+ properties</span><span class="tc-tag gold">Field Europe</span></div>
-    </div>
-    <div class="team-card gold">
-      <div class="tc-entity orn">ORN Connect</div>
-      <div class="tc-role">Global Contracting &amp; Partnerships</div>
-      <div class="tc-name">Manish Suchde</div>
-      <div class="tc-desc">Global DMC relationships, supplier partnerships. Cathay Pacific programme (Jul–Nov 2026), Macau Tourism, Kerzner. Feeds into ORN Connect product library.</div>
-      <div class="tc-reports">↑ Ajay Kawa</div>
-      <div class="tc-tags"><span class="tc-tag gold">Global</span><span class="tc-tag gold">DMC integration</span></div>
-    </div>
-    <div class="team-card gold">
-      <div class="tc-entity orn">ORN Connect</div>
-      <div class="tc-role">Contracts Manager — Asia</div>
-      <div class="tc-name">David Tan</div>
-      <div class="tc-desc">Asia Contracting &amp; Partnerships. Asia-Pacific supplier base for the ORN Connect product library.</div>
-      <div class="tc-reports">↑ Ajay Kawa</div>
-      <div class="tc-tags"><span class="tc-tag gold">Asia</span><span class="tc-tag gold">Cathay Pacific</span></div>
-    </div>
+    <div class="team-card gold"><div class="tc-entity orn">ORN Connect</div><div class="tc-role">Contracts Manager — UK &amp; Europe</div><div class="tc-name">Ken Newton</div><div class="tc-desc">Hotel &amp; Supplier Contracting · 27+ properties across Scotland, England, Wales. Field-based Europe. Primary Incoming Europe contact.</div><div class="tc-reports">↑ Ajay Kawa</div><div class="tc-tags"><span class="tc-tag gold">27+ properties</span></div></div>
+    <div class="team-card gold"><div class="tc-entity orn">ORN Connect</div><div class="tc-role">Global Contracting &amp; Partnerships</div><div class="tc-name">Manish Suchde</div><div class="tc-desc">Global DMC relationships, Cathay Pacific (Jul–Nov 2026), Macau, Kerzner. Three-phase integration model.</div><div class="tc-reports">↑ Ajay Kawa</div><div class="tc-tags"><span class="tc-tag gold">Global</span></div></div>
+    <div class="team-card gold"><div class="tc-entity orn">ORN Connect</div><div class="tc-role">Contracts Manager — Asia</div><div class="tc-name">David Tan</div><div class="tc-desc">Asia-Pacific contracting feeding the ORN Connect product library.</div><div class="tc-reports">↑ Ajay Kawa</div><div class="tc-tags"><span class="tc-tag gold">Asia</span></div></div>
   </div>
-
   <div class="team-section-label">Operations, Transport &amp; Quality</div>
   <div class="team-row cols-3">
-    <div class="team-card skyjet">
-      <div class="tc-entity skyjet">ORN Connect Transport</div>
-      <div class="tc-role">CEO — Transport Division</div>
-      <div class="tc-name">Adonis Iliopoulos</div>
-      <div class="tc-desc">Leads the ORN Connect Transport Division — previously Skyjet. 96+ vehicles, 30+ coaches, 65+ private transfer vehicles. ISO 27001. All departures and transfers under ORN Connect brand.</div>
-      <div class="tc-reports">↑ Ajay Kawa</div>
-      <div class="tc-tags"><span class="tc-tag" style="background:rgba(45,106,159,0.2);color:#7ab8df;">Previously Skyjet</span><span class="tc-tag" style="background:rgba(45,106,159,0.2);color:#7ab8df;">96+ fleet</span></div>
-    </div>
-    <div class="team-card gold">
-      <div class="tc-entity orn">ORN Connect</div>
-      <div class="tc-role">GIT QC Manager</div>
-      <div class="tc-name">Clinton Thomas</div>
-      <div class="tc-desc">GIT Quality Control. T-30, T-14, T-7 pre-departure gates. QC sign-off on all GIT departures before coaches are confirmed.</div>
-      <div class="tc-reports">↑ Ajay Kawa</div>
-      <div class="tc-tags"><span class="tc-tag gold">QC sign-off</span><span class="tc-tag gold">T-7 gate</span></div>
-    </div>
-    <div class="team-card gold">
-      <div class="tc-entity orn">ORN Connect</div>
-      <div class="tc-role">Turkey &amp; ME Gateway</div>
-      <div class="tc-name">Baris Intepe</div>
-      <div class="tc-desc">Turkey, Eastern Med and ME inbound market gateway. Acting intelligence lead ahead of ME CEO appointment.</div>
-      <div class="tc-reports">↑ Ajay Kawa / Manish Suchde</div>
-      <div class="tc-tags"><span class="tc-tag gold">Turkey</span><span class="tc-tag gold">ME gateway</span></div>
-    </div>
+    <div class="team-card skyjet"><div class="tc-entity skyjet">ORN Connect Transport</div><div class="tc-role">CEO — Transport Division</div><div class="tc-name">Adonis Iliopoulos</div><div class="tc-desc">Leads the ORN Connect Transport Division — previously Skyjet. 96+ vehicles, 30+ coaches, 65+ transfer vehicles. ISO 27001.</div><div class="tc-reports">↑ Ajay Kawa</div><div class="tc-tags"><span class="tc-tag" style="background:rgba(45,106,159,0.2);color:#7ab8df;">Previously Skyjet</span></div></div>
+    <div class="team-card gold"><div class="tc-entity orn">ORN Connect</div><div class="tc-role">GIT QC Manager</div><div class="tc-name">Clinton Thomas</div><div class="tc-desc">GIT Quality Control. T-60, T-45, T-35, T-30 pre-departure gates. QC sign-off on all departures.</div><div class="tc-reports">↑ Ajay Kawa</div><div class="tc-tags"><span class="tc-tag gold">QC sign-off</span><span class="tc-tag gold">D-35 QC</span></div></div>
+    <div class="team-card gold"><div class="tc-entity orn">ORN Connect</div><div class="tc-role">Turkey &amp; ME Gateway</div><div class="tc-name">Baris Intepe</div><div class="tc-desc">Turkey, Eastern Med and ME inbound gateway. Acting intelligence lead ahead of ME CEO appointment.</div><div class="tc-reports">↑ Ajay Kawa / Manish Suchde</div><div class="tc-tags"><span class="tc-tag gold">Turkey · ME</span></div></div>
   </div>
-
   <div class="team-section-label">UK Central Functions — 17 Hanover Square (TBC)</div>
   <div class="team-row cols-3">
-    <div class="team-card hiring"><div class="tc-entity orn">ORN Connect</div><div class="tc-role">UK CFO</div><div class="tc-name">TBD — Recruiting</div><div class="tc-desc">Single ORN Connect P&L. European finance centralised. Reports to Group CFO.</div><div class="tc-tags"><span class="tc-tag" style="background:rgba(212,76,48,0.15);color:#e07060;">Recruiting</span></div></div>
+    <div class="team-card hiring"><div class="tc-entity orn">ORN Connect</div><div class="tc-role">UK CFO</div><div class="tc-name">TBD — Recruiting</div><div class="tc-desc">Single ORN Connect P&amp;L. European finance. Phase 2 payment management. Reports to Group CFO.</div><div class="tc-tags"><span class="tc-tag" style="background:rgba(212,76,48,0.15);color:#e07060;">Recruiting</span></div></div>
     <div class="team-card hiring"><div class="tc-entity orn">ORN Connect</div><div class="tc-role">Administrator</div><div class="tc-name">TBC</div><div class="tc-desc">Office management · Diary · 17 Hanover Square.</div><div class="tc-reports">↑ Ajay Kawa / Ken Newton</div></div>
     <div class="team-card hiring"><div class="tc-entity orn">ORN Connect</div><div class="tc-role">Contract Processing</div><div class="tc-name">TBC</div><div class="tc-desc">Rate loading · Nexus system accuracy.</div><div class="tc-reports">↑ Ken Newton</div></div>
   </div>
-
   <div class="team-section-label">Nexus Reservations Team — Priority Hires</div>
   <div class="team-row cols-3">
-    <div class="team-card nexus"><div class="tc-entity nexus">ORN Connect · Nexus</div><div class="tc-role">Head of Reservations</div><div class="tc-name">TBC — Priority hire #1</div><div class="tc-desc">Overall Nexus reservations operation. Agent relationships. Booking workflow and reporting.</div><div class="tc-reports">↑ Ajay Kawa</div><div class="tc-tags"><span class="tc-tag gold">Priority hire</span></div></div>
-    <div class="team-card nexus"><div class="tc-entity nexus">ORN Connect · Nexus</div><div class="tc-role">Senior Reservations Agent</div><div class="tc-name">TBC — to appoint</div><div class="tc-desc">FIT, GIT, groups via Nexus. Agent liaison, rooming lists.</div><div class="tc-reports">↑ Head of Reservations</div></div>
-    <div class="team-card nexus"><div class="tc-entity nexus">ORN Connect · Nexus</div><div class="tc-role">Reservations Agent</div><div class="tc-name">TBC — to appoint</div><div class="tc-desc">Transfers, escorted tours, pre-departure documentation via Nexus.</div><div class="tc-reports">↑ Head of Reservations</div></div>
+    <div class="team-card nexus"><div class="tc-entity nexus">ORN Connect · Nexus</div><div class="tc-role">Head of Reservations</div><div class="tc-name">TBC — Priority hire #1</div><div class="tc-desc">Overall Nexus reservations and sales support operation. Agent relationships. Booking workflow and reporting. First critical hire.</div><div class="tc-reports">↑ Ajay Kawa</div><div class="tc-tags"><span class="tc-tag gold">Priority hire</span></div></div>
+    <div class="team-card nexus"><div class="tc-entity nexus">ORN Connect · Nexus</div><div class="tc-role">Sales Support / Senior Res Agent</div><div class="tc-name">TBC — to appoint</div><div class="tc-desc">Confirms bookings within 72hrs at component level. Handles manual pricing for off-system activities. Agent liaison.</div><div class="tc-reports">↑ Head of Reservations</div></div>
+    <div class="team-card nexus"><div class="tc-entity nexus">ORN Connect · Nexus</div><div class="tc-role">Ops Support / Res Agent</div><div class="tc-name">TBC — to appoint</div><div class="tc-desc">Post-confirmation changes, pre-departure checks, payout creation, shared tracker management.</div><div class="tc-reports">↑ Head of Reservations</div></div>
   </div>
-
   <div class="team-section-label">ORN Cruise Division (Hiring)</div>
   <div class="team-row cols-4">
     <div class="team-card hiring"><div class="tc-entity skyjet">ORN Cruise</div><div class="tc-role">Cruise Manager</div><div class="tc-name">Awaiting hire</div><div class="tc-desc">Cruise division management.</div></div>
@@ -1076,6 +1138,7 @@ p:last-child{margin-bottom:0;}
       <div class="cta-item"><strong>Contracting</strong><span>Ken Newton &middot; Manish Suchde</span></div>
     </div>
   </div>
+</div>
 </div>
 
 </main>
